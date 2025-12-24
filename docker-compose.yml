@@ -26,8 +26,7 @@ services:
       - "5000:5000"
     environment:
       - BACKEND_URL=http://backend:8000
-      - STRIPE_KEY=sk_test_51ShrXjGmwL7DVQUgjoFsBI1OM34tNMHcPDIcNjSw6Nra6KlGTuolPqq5U8uLNuabxWjNVWeJNZhz5c4jyfDobARC00rmiKFK3J
-      - OPENAI_KEY=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
+     
     depends_on:
       - backend
 

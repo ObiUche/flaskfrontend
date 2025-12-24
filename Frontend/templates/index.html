@@ -5,8 +5,8 @@
 
 <div class = "car">
     <h3>{{ car.brand }} {{ car.model }}</h3>
-    <p>Colour: {{car.colour }} - Year: {{car.modelYear}} - Price: ${{car.price}}</p>
-    <a href="/cars/{{ car.id }}">View Details</a>
+    <p>Colour: {{car.colour }} - Year: {{car.modelYear}} - Price: £{{car.price}}</p>
+    <a href="/car/{{ car.id }}">View Details</a>
 </div>
 {% endfor %}
 {% endblock %}

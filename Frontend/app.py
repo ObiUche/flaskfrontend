@@ -15,6 +15,24 @@ openai_client = OpenAI(
     api_key=os.getenv("OPENAI_KEY")
 )
 
+@app.route('/cars/new', methods=['GET', 'POST'])
+def new_car():
+    if request.method == 'POST':
+        car_data = {
+            "brand": request.form['brand'],
+            "model": request.form['model'],
+            "colour": request.form['colour'],
+            "modelYear": int(request.form['modelYear']),
+            "regNum": request.form['regNum'],
+            "price": float(request.form['price'])
+        }
+        response = requests.post(f"{BACKEND_URL}/cars/", json=car_data)
+        if response.status_code == 200:
+            return redirect('/')
+        else:
+            return f"Error creating car: {response.text}", 500
+    return render_template('new_car.html')
+
 @app.route('/')
 def index():
     try:

@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>Available Cars</h2>
+<a href="/cars/new"><button
+    style="margin-bottom: 20px;">Add New Car</button></a>
 {% for car in cars %}
 
 <div class = "car">
